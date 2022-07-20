@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.borderrad {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.tabs{
+  width:100%;
+  text-align:center;
+  margin-top:2vh;
+}
+
+button{
+  margin-right:15px;
+  font-size:20px;
+  background:transparent;
+  border:none;
+  outline:none;
+  padding:10px 20px ;
+  cursor:pointer;
+  color:rgba(0,0,0,.4);
+  transition:all ease-in-out .2s;
+  border-bottom:2px solid transparent;
+  
+}
+.active{
+  border-bottom:2px solid #42b3f4;
+ 
+  color: #42b3f4;
+}
+
+
+.wrapper {
+  max-width: 100%;
+  padding: 0 1.5em;
+  background: white;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.wrapper:hover, .wrapper.focus {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+.search {
+  display: flex;
+  height: 3em;
+  align-items: center;
+}
+.search input {
+  flex: 1;
+  width: 100%;
+  border: 0;
+}
+.search i , .colorblue  {
+  color:rgb(55,149,202)!important;
+}
+.colorblack{
+color: black;
+}
+:focus {
+  outline: none;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  animation: enlarge 0.25s forwards;
+}
+.list li {
+  margin-right: -1.5em;
+  margin-left: -1.5em;
+  padding: 0 1.5em;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.list li:hover {
+  background: whitesmoke;
+}
+.result {
+  display: flex;
+  align-items: center;
+}
+.result b {
+  margin-right: 0.5em;
+}
+.result span {
+  margin: 0 0.5em;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+}
+@keyframes enlarge {
+  to {
+    max-height: 10em;
+ }
+}
+
+.search input::-webkit-input-placeholder {
+  font-size: 15px;
+  line-height: 4;
+}
+
+.marginbtm5px {
+  margin-bottom:5px;
+}
+
+.margintop5px {
+   margin-top: 5px;
+}
+.paddingtop5px {
+  padding-top:5px;
+}
+.marginauto{
+  margin: 0px auto!important;
+}
+.brdtopsrchtext {
+  border-top: 1px solid #000900b0;
+}
+.colorred {
+  color: red;
+}
+.errtxtfontsize {
+  font-size:0.83em;
+}
+.margintop2px {
+  margin-top: 2px!important;
+}
+.marginbtm2px{
+margin-bottom: 2px!important;
+}
+.fontbold {
+  font-weight: bold!important;
+}
+.width50 {
+  width: 50%!important;
+}
+.width100 {
+  width: 100%!important;
+}
+.width15{
+  width: 15% !important;
+}
+.width70{
+  width: 70%!important;
+}
+.textalignleft{
+  text-align: left!important;
+}
+.textalignright {
+  text-align: right!important;
+}
+.fontsize1em{
+  font-size: 1em!important;
+}
+.fontsizeheadtxt{
+ font-size: 0.7em!important;
+}
+.brdrightline {
+  border-right: 1px solid #000900b0!important;
+}
+.brdrad8px {
+ border-radius: 8px!important;
+}
+.padleft20px{
+  padding-left: 20px!important;
+}
+.width80{
+  width: 80%;
+}
+.padding40 {
+  padding-top:40%;
+}
+.margtop10 {
+  margin-top:10px!important;
+}
+.colorhighl {
+  background-color: rgb(0,122,188)!important;
+}
+.paddingtop10{
+  padding-top: 10px!important;
+}
+.paddingbtm10{
+  padding-bottom: 10px!important;
+}
