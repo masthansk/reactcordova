@@ -1,51 +1,32 @@
-import React, { useState } from 'react';
+import React, { useRef,useState } from 'react';
 import $, { event } from "jquery";
+import axios from "axios";
 
-
-
-const initialDetails = [{
-    "agentCode": "10299001",
-    "agentName": "Muhamad Yusuf",
-    "prosp": 12,
-    "rank": 1
-  },
-  {
-    "agentCode": "10199164",
-    "agentName": "Abhik Thakurta",
-    "prosp": 12,
-    "rank": 2
-  },
-  {
-    "agentCode": "10199189",
-    "agentName": "Fatema Ani",
-    "prosp": 10,
-    "rank": 3
-  }, {
-    "agentCode": "10299004",
-    "agentName": "Nabil Ahmad",
-    "prosp": 10,
-    "rank": 4
-  }
-  ];
+const agencyURL = "http://localhost:3001/agency";
 
 export default class SearchBar extends React.Component {
 
-
- 
-    
     state = {
         hasError:false,
-        data: initialDetails,
+        data: [],
         agentName: "",
         agentCode: "",
         selectData : "",
         searchItem : "",
         showSearchIcon: true
       }
-    // fetch data
+
+       // fetch data
+      componentDidMount(){
+        axios.get(agencyURL,  { mode: 'cors' }).then((response) => {
+          var agentdata = response.data;
+          this.setState({data: agentdata.agency.prospect.rankingObject});
+        });
+       }
+   
     
     // Search input   
-    //onInput = e => this.setState({ agentName: e.target.value });
+   
    
     validation(e){
       if(e.target.value != ""){
@@ -88,7 +69,7 @@ export default class SearchBar extends React.Component {
             this.setState({selectData : item})
             this.parentFunCall(item);
         }else{
-            this.setState({selectData : initialDetails})
+            this.setState({selectData : this.state.data})
             this.parentFunCall(this.state.selectData);
         }
         $(".wrapper .list").hide();
@@ -113,11 +94,11 @@ export default class SearchBar extends React.Component {
                 id="search"
                 type="search"
                 value={this.state.agentName}
-                placeholder="Search by Agent Code and User Name"
+                placeholder="Search by Agent Code , User Name"
                 onChange={(event) => this.onInput(event)}
                 onFocus={(event) => this.onFocus(event)}
                 onBlur={(event) => this.onBlur(event)}
-                autoComplete="off"
+                autoFocus 
               />
              {this.state.showSearchIcon && <i class="fa fas fa-search" ></i>}  
             </div>
@@ -135,7 +116,7 @@ export default class SearchBar extends React.Component {
               </div>
             )}
             {
-              agentName.length >1 && filtered.length == 0 && (
+              !this.state.hasError && agentName.length >1 && filtered.length == 0 && (
                 <ul className="list">
                 <li onClick={() => this.onClickNoRes(agentName)} className="paddingtop10 paddingbtm10 margintop5px paddingtop5px brdtopsrchtext"> See All Results for " {agentName} "</li>
                 </ul>

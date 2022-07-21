@@ -1,0 +1,30 @@
+{
+	"agency": {
+		"prospect": {
+			"rankingObject": [{
+					"agentCode": "10299001",
+					"agentName": "Muhamad Yusuf",
+					"prosp": 12,
+					"rank": 1
+				},
+				{
+					"agentCode": "10199164",
+					"agentName": "Abhik Thakurta",
+					"prosp": 12,
+					"rank": 2
+				},
+				{
+					"agentCode": "10199189",
+					"agentName": "Fatema Ani",
+					"prosp": 10,
+					"rank": 3
+				}, {
+					"agentCode": "10299004",
+					"agentName": "Nabil Ahmad",
+					"prosp": 10,
+					"rank": 4
+				}
+			]
+		}
+	}
+}
